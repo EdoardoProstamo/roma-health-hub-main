@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+ * Design System - Studio Medico di Medicina Generale
+ * Palette: Minimal Gray (bianco + grigio perla + azzurro polvere)
+ * Stile: Clinico, sobrio, istituzionale
+ */
+
+@layer base {
+  :root {
+    /* Background e Foreground */
+    --background: 0 0% 100%;
+    --foreground: 240 6% 12%;
+
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 240 6% 12%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 6% 12%;
+
+    /* Primary - Charcoal scuro per testi principali */
+    --primary: 240 6% 12%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Grigio perla */
+    --secondary: 240 5% 97%;
+    --secondary-foreground: 240 6% 12%;
+
+    /* Muted - Grigio chiaro */
+    --muted: 240 5% 91%;
+    --muted-foreground: 240 4% 46%;
+
+    /* Accent - Azzurro polvere */
+    --accent: 200 35% 81%;
+    --accent-foreground: 200 35% 35%;
+
+    /* Accent hover */
+    --accent-hover: 200 35% 72%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border e Input */
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 200 35% 65%;
+
+    /* Radius - Angoli smussati */
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 240 5% 97%;
+    --sidebar-foreground: 240 6% 12%;
+    --sidebar-primary: 200 35% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 35% 92%;
+    --sidebar-accent-foreground: 200 35% 30%;
+    --sidebar-border: 240 6% 88%;
+    --sidebar-ring: 200 35% 65%;
+
+    /* Custom - Colori specifici */
+    --powder-blue: 200 35% 81%;
+    --powder-blue-light: 200 40% 93%;
+    --powder-blue-dark: 200 30% 55%;
+    --pearl-gray: 240 5% 97%;
+    --light-gray: 240 5% 91%;
+    --medium-gray: 240 4% 56%;
+    --dark-gray: 240 4% 24%;
+    --charcoal: 240 6% 12%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    @apply text-foreground font-semibold tracking-tight;
+  }
+}
+
+/* Animazioni professionali - vanilla CSS */
+@layer utilities {
+  /* Fade In */
+  .animate-fade-in {
+    animation: fadeIn 300ms ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide Up */
+  .animate-slide-up {
+    animation: slideUp 300ms ease-out forwards;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Scale In */
+  .animate-scale-in {
+    animation: scaleIn 200ms ease-out forwards;
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Stagger delay utilities */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+
+  /* Hover transition */
+  .hover-lift {
+    @apply transition-transform duration-200 ease-out;
+  }
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Separatori sottili */
+@layer components {
+  .separator-thin {
+    @apply border-t border-border;
+  }
+  
+  .separator-section {
+    @apply border-t border-border/60;
+  }
+}
